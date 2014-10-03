@@ -25,12 +25,12 @@ class ossFlickrWidget extends WP_Widget {
       }
 
       echo '<div class="ossFlickrFeed"
-            data-id= "' . $this->number . '"
-            data-flickrid="' . $instance['flickrId'] . '"
-            data-feed= "' . $instance['feed'] . '"
-            data-rows="' . $instance['rows'] . '"
-            data-columns="' . $instance['columns'] . '"
-            style="position:relative;overflow:hidden;height:50px;width:100%;">
+                 data-id= "' . $this->number . '"
+                 data-flickrid="' . $instance['flickrId'] . '"
+                 data-feed= "' . $instance['feed'] . '"
+                 data-rows="' . $instance['rows'] . '"
+                 data-columns="' . $instance['columns'] . '"
+                 style="position:relative;overflow:hidden;height:50px;width:100%;">
               <div class="oss-flickr-loading" style="position:absolute;left:50%;margin-left:-16px;top:18px;">
                 <img src="' . plugins_url('/loading.gif', __FILE__) . '" width="32" height="32">
               </div>
@@ -81,7 +81,7 @@ class ossFlickrWidget extends WP_Widget {
   <p>
     <label for="<?php echo $this->get_field_id( 'feed' ); ?>"><?php _e( 'Feed: ' ); ?></label>
 
-    <select style="width: 200px;" id="<?php echo $this->get_field_id( 'feed' ) ?>" name="<?php echo $this->get_field_name('feed') ?>" type="text">
+    <select style="width: 200px;" id="<?php echo $this->get_field_id( 'feed' ) ?>" name="<?php echo $this->get_field_name('feed') ?>">
       <option value="user" <?php if ($feed == 'user') { echo 'selected'; } ?>>User</option>
       <option value="group" <?php if ($feed == 'group') { echo 'selected'; } ?>>Group</option>
       <option value="friends" <?php if ($feed == 'friends') { echo 'selected'; } ?>>Friends</option>
@@ -107,11 +107,11 @@ class ossFlickrWidget extends WP_Widget {
 
   public function update( $new_instance, $old_instance ) {
     $instance = array();
-    $instance['title']    = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+    $instance['title']    = ( ! empty( $new_instance['title'] ) )    ? strip_tags( $new_instance['title'] ) : '';
     $instance['flickrId'] = ( ! empty( $new_instance['flickrId'] ) ) ? strip_tags( $new_instance['flickrId'] ) : '';
-    $instance['feed']     = ( ! empty( $new_instance['feed'] ) ) ? strip_tags( $new_instance['feed'] ) : 'user';
-    $instance['rows']     = ( ! empty( $new_instance['rows'] ) ) ? (int)( $new_instance['rows'] ) : '1';
-    $instance['columns']  = ( ! empty( $new_instance['columns'] ) ) ? (int)( $new_instance['columns'] ) : '20';
+    $instance['feed']     = ( ! empty( $new_instance['feed'] ) )     ? strip_tags( $new_instance['feed'] ) : 'user';
+    $instance['rows']     = ( ! empty( $new_instance['rows'] ) )     ? (int)( $new_instance['rows'] ) : '1';
+    $instance['columns']  = ( ! empty( $new_instance['columns'] ) )  ? (int)( $new_instance['columns'] ) : '20';
     return $instance;
   }
 

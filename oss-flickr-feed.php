@@ -24,7 +24,7 @@ class ossFlickrWidget extends WP_Widget {
         echo $args['before_title'] . '<a class="ossFlickrFeedTitle" href="#" target="_blank">' . $title . '</a>' . $args['after_title'];
       }
 
-      echo '<div class="ossFlickrFeed"
+      echo '<div class="oss-flickr-feed"
                  data-id= "' . $this->number . '"
                  data-flickrid="' . $instance['flickrId'] . '"
                  data-feed= "' . $instance['feed'] . '"

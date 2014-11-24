@@ -1,7 +1,7 @@
 (function($) {
   $(document).ready(function() {
     //The Widget can be used multiple times on the same page, so we iterate over each instance before doing anything.
-    $('.ossFlickrFeed').each(function() {
+    $('.oss-flickr-feed').each(function() {
       var thisFeed = $(this);
       var d = thisFeed.data();
 
@@ -56,7 +56,7 @@
         });
 
       });
-      console.log(flickerAPI);
+      // console.log(flickerAPI);
     }); // finish iterating over one instance of the widget
   });
 
@@ -113,7 +113,7 @@ var optimizedResize = (function() {
 
 // start process
 optimizedResize.init(function() {
-  $('.ossFlickrFeed').each(function(){
+  $('.oss-flickr-feed').each(function(){
     var data        = $(this).data();
     var parentWidth = $(this).width();
 
